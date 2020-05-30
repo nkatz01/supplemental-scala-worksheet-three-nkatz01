@@ -28,4 +28,16 @@ object FuncConstructs extends  App{
   def fib2(n: Int): (Int, Int) = { if (n <= 1) (1,1) else ( fib2(n-1)._1 + fib2(n-1)._2, fib2(n-1)._1 )}
   def fib(n: Int) = fib2(n)._1
   println(fib(4))
+  def fib3(n: Int,  next: Int, prev: Int): (Int, Int)= {
+
+    if (n <= 1) (next, prev)
+      else
+    ( fib3(n-1,    next+prev, next ) )
+  }
+  def fibacc(n: Int, next: Int, prev: Int) = fib3(n, next, prev )._1
+  println(fibacc(4, 1,1))
+
+
+
+
 }
